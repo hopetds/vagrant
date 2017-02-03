@@ -225,4 +225,27 @@
 		$service iptables restart - ok
         
 ##Tomcat is now available through httpd(80).
+---------
+##Additional questions
+1.What java version is installed?
+	$java-version 
+	java version "1.7.0_79"
+2.How was it installed and configured?
+	$yum info java is empty. > Java was installed manually. By default its configured in JAVA_HOME, if there is no env 	configs - stored in path set by alternatives path
+3.Where are log files of tomcat and httpd?
+	Tomcat log files stored /opt/apache/tomcat/current/logs
+	Httpd log files stored /var/logs/httpd/
+4.Where is JAVA_HOME and what is it? 
+	Its a variable, it can be set manually by user, for the current session, by program, or specified through alternatives
+5.Where is tomcat installed?
+	Tomcat is installed in /opt/apache/tomcat/7.0.62
+6.What is CATALINA_HOME?
+	Its a location of my tomcat installation
+7.What users run httpd and tomcat processes? How is it configured?
+	Httpd starts from root, tomcat is configured to run from user tomcat using tomcat script.
+	 -  su - tomcat -c "sh /opt/apache/tomcat//current/bin/startup.sh
+8.What configuration files are used to make components work with each other?
+	Catalina.sh defines how tomcat will be configured. Httpd service is based on httpd.conf, which is widely configurable , for example enabling multiple virtual hosts, by including configuration files.
+
+9.What does it mean: “load average: 1.18, 0.95, 0.83”?
 
