@@ -228,44 +228,44 @@
 ---------
 ##Additional questions
 <br>
-1.What java version is installed?<br>
-	$java-version <br>
+1.What java version is installed?
+	$java-version 
 
-	java version "1.7.0_79"<br>
+	java version "1.7.0_79"
 
-2.How was it installed and configured?<br>
+2.How was it installed and configured?
 
-	$yum info java is empty. <br>
-> Java was installed manually. By default its configured in JAVA_HOME, if there is no env 	configs - stored in path set by alternatives path<br>
+	$yum info java is empty. 
+> Java was installed manually. By default its configured in JAVA_HOME, if there is no env 	configs - stored in path set by alternatives path
 
-3.Where are log files of tomcat and httpd?<br>
+3.Where are log files of tomcat and httpd?
 
-	Tomcat log files stored /opt/apache/tomcat/current/logs<br>
+	Tomcat log files stored /opt/apache/tomcat/current/logs
+	
+	Httpd log files stored /var/logs/httpd/
+	
+4.Where is JAVA_HOME and what is it?
 
-	Httpd log files stored /var/logs/httpd/<br>
+	Its a variable, it can be set manually by user, for the current session, by program, or specified through alternatives
 
-4.Where is JAVA_HOME and what is it? <br>
+5.Where is tomcat installed?
 
-	Its a variable, it can be set manually by user, for the current session, by program, or specified through alternatives<br>
+	Tomcat is installed in /opt/apache/tomcat/7.0.62
 
-5.Where is tomcat installed?<br>
+6.What is CATALINA_HOME?
 
-	Tomcat is installed in /opt/apache/tomcat/7.0.62<br>
+	Its a location of my tomcat installation
 
-6.What is CATALINA_HOME?<br>
+7.What users run httpd and tomcat processes? How is it configured?
 
-	Its a location of my tomcat installation<br>
+	Httpd starts from root, tomcat is configured to run from user tomcat using tomcat script.
 
-7.What users run httpd and tomcat processes? How is it configured?<br>
+	 -  su - tomcat -c "sh /opt/apache/tomcat//current/bin/startup.sh
 
-	Httpd starts from root, tomcat is configured to run from user tomcat using tomcat script.<br>
+8.What configuration files are used to make components work with each other?
 
-	 -  su - tomcat -c "sh /opt/apache/tomcat//current/bin/startup.sh<br>
-
-8.What configuration files are used to make components work with each other?<br>
-
-	Catalina.sh defines how tomcat will be configured. Httpd service is based on httpd.conf, which is widely configurable ,<br>
- for example enabling multiple virtual hosts, by including configuration files.<br>
+	Catalina.sh defines how tomcat will be configured. Httpd service is based on httpd.conf, which is widely configurable ,
+ for example enabling multiple virtual hosts, by including configuration files.
 
 
 9.What does it mean: “load average: 1.18, 0.95, 0.83”?
