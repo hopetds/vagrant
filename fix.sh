@@ -11,13 +11,13 @@
 
 #Copying !previously! edited configs changes in httpd.conf: - Commented defined VirutalHost									
 service httpd stop
-cp /vagrant/httpd.conf.1 /etc/httpd/conf/httpd.conf
+/bin/cp /vagrant/httpd.conf.1 /etc/httpd/conf/httpd.conf
 
 #Changes in vhost.conf.conf:  - mntlab:80 changed to *:80 to accept all requests and tomcat-worker > tomcat worker 											        
-cp /vagrant/vhost.conf.1 /etc/httpd/conf.d/vhost.conf
+/bin/cp /vagrant/vhost.conf.1 /etc/httpd/conf.d/vhost.conf
 	
 #Changes in workers.properties: tomcat.worker > tomcat-worker
-cp /vagrant/workers.properties1 /etc/httpd/conf.d/workers.properties
+/bin/cp /vagrant/workers.properties1 /etc/httpd/conf.d/workers.properties
 
 #Restarting httpd service to apply Changes                                              
 service httpd start
